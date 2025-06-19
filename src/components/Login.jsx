@@ -3,15 +3,21 @@ import "../style/register.css";
 import { useState, useContext } from "react";
 import { UserContext } from "../context/UserContext";
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
 import { useNavigate } from "react-router-dom";
 
+=======
+>>>>>>> 47e413df065a58ae39a158c5c821d1dd912b94c7
 
 const Login = () => {
   const { setUser } = useContext(UserContext); // Obtiene la función setUser del contexto para guardar el usuario logueado globalmente
   const [nombre, setNombre] = useState(""); // Estado para guardar el nickname ingresado por el usuario
   const [contraseña, setContraseña] = useState(""); // Estado para la contraseña ingresada
   const [error, setError] = useState(""); // Estado para mostrar mensajes de error
+<<<<<<< HEAD
   const navigate = useNavigate();
+=======
+>>>>>>> 47e413df065a58ae39a158c5c821d1dd912b94c7
 
   const handleSubmit = async (e) => {
     e.preventDefault(); // Previene el comportamiento por defecto del formulario (recargar la página)
@@ -41,10 +47,15 @@ const Login = () => {
         return;
       }
 
+<<<<<<< HEAD
       setUser(usuarioEncontrado);
       setError("");
       navigate("/home");
 
+=======
+      setUser(usuarioEncontrado); // Guarda el usuario encontrado en el contexto (y en localStorage automáticamente por el efecto en el provider)
+      setError(""); // Limpia cualquier error previo
+>>>>>>> 47e413df065a58ae39a158c5c821d1dd912b94c7
     } catch (error) {
       console.error("Error al buscar el usuario:", error); // Muestra el error en consola
       setError("Error de conexión."); // Muestra mensaje de error al usuario
