@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import "../style/postDetail.css"; // Asegúrate de tener este archivo creado
 
 const PostDetail = () => {
   const { id } = useParams();
@@ -28,34 +29,36 @@ const PostDetail = () => {
   if (!post) return <p>Cargando publicación...</p>;
 
   return (
-    <div className="post-detail">
-      <h2>{post.description}</h2>
-{imagenes.length > 0 && (
-  <div className="post-images">
-    {imagenes.map((img) => (
-      <img
-        key={img.id}
-        src={img.url}
-        alt={`Imagen ${img.id}`}
-        className="detalle-img"
-      />
-    ))}
-  </div>
-)}
+    <div className="post-detail-container">
+        <h2>{post.description}</h2>
+        {imagenes.length > 0 && (
+          <div className="post-images">
+            {imagenes.map((img) => (
+              <img
+                key={img.id}
+                src={img.url}
+                alt={`Imagen ${img.id}`}
+                className="detalle-img"
+              />
+            ))}
+          </div>
+        )}
 
+        <div className="comentarios-section">
+          <h3>💬 Comentarios</h3>
+          {comentarios.length === 0 ? (
+            <p>No hay comentarios aún.</p>
+          ) : (
+            <ul>
+              {comentarios.map((c, i) => (
+                <li key={i}>{c.content}</li>
+              ))}
+            </ul>
+          )}
+        </div>
 
-      <h3>💬 Comentarios</h3>
-      {comentarios.length === 0 ? (
-        <p>No hay comentarios aún.</p>
-      ) : (
-        <ul>
-          {comentarios.map((c, i) => (
-            <li key={i}>{c.content}</li>
-          ))}
-        </ul>
-      )}
-    </div>
-  );
+      </div>
+      ); 
 };
 
 export default PostDetail;

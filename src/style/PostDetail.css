@@ -1,0 +1,107 @@
+.post-detail-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.post-detail-container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.post-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.post-images img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 6px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+}
+
+.comentarios-section {
+  margin-top: 2rem;
+}
+
+.comentarios-section h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.comentarios-section ul {
+  list-style: disc inside;
+  padding-left: 1rem;
+}
+
+.comentarios-section li {
+  margin-bottom: 0.5rem;
+}
+
+.comentario-form {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.comentario-form textarea {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+.comentario-form button {
+  background-color: #4caf50;
+  color: white;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.comentario-form button:hover {
+  background-color: #43a047;
+}
+
+
+
+
+/* Responsive */
+@media (max-width: 600px) {
+  .post-detail-container {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .post-images {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .comentarios-section ul {
+    padding-left: 0.5rem;
+  }
+
+  .comentario-form textarea {
+    font-size: 0.95rem;
+  }
+
+  .comentario-form button {
+    font-size: 0.95rem;
+  }
+}
