@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext} from "react";
+import { UserContext } from "../context/UserContext"; 
 import "../style/postDetail.css"; // Asegúrate de tener este archivo creado
 
 const PostDetail = () => {
@@ -7,6 +8,8 @@ const PostDetail = () => {
   const [post, setPost] = useState(null);
   const [comentarios, setComentarios] = useState([]);
   const [imagenes, setImagenes] = useState([]);
+  const { user } = useContext(UserContext); // Obtengo el usuario actual 
+  const [nuevoComentario, setNuevoComentario] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,8 +28,33 @@ const PostDetail = () => {
 
     fetchData();
   }, [id]);
+const handelComentario = async (e) => {
+  e.preventDefault();
+  if (!nuevoComentario.trim()) return;
 
-  if (!post) return <p>Cargando publicación...</p>;
+  const response = await fetch(`http://localhost:3001/comments`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      content: nuevoComentario,
+      postId: id,
+      userId: user.id, // Asumiendo que el usuario tiene un ID
+    }),
+  });
+
+  if(response.ok) {
+    const comentarioAgregado  = await response.json();
+    setComentarios([...comentarios, comentarioAgregado]);
+    setNuevoComentario(""); // Limpiar el campo de comentario
+  }else {
+    console.error("Error al agregar el comentario");
+  }
+};
+
+
+if (!post) return <p>Cargando publicación...</p>;
 
   return (
     <div className="post-detail-container">
@@ -57,8 +85,22 @@ const PostDetail = () => {
           )}
         </div>
 
+        {/* Formulario para agregar un comentario nuevo: */}
+          {user ? (
+            <form onSubmit={handelComentario} className="comentario-form">
+              <textarea
+                value={nuevoComentario}
+                onChange={(e) => setNuevoComentario(e.target.value)}
+                placeholder="Escribe tu comentario..."
+                required
+              />  
+              <button type="submit">Comentar</button>
+            </form>
+          ) : (
+            <p style={ {marginTop:"1rem"}}>Inicia sesión para comentar.</p>
+          )}
       </div>
-      ); 
+  ); 
 };
 
 export default PostDetail;
