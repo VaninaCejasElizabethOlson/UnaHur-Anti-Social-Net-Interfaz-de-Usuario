@@ -5,6 +5,8 @@ import { UserContext } from "../context/UserContext";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
+import { FaUser, FaLock } from "react-icons/fa";
+
 const Login = () => {
   const { setUser } = useContext(UserContext); // Obtiene la función setUser del contexto para guardar el usuario logueado globalmente
   const [nombre, setNombre] = useState(""); // Estado para guardar el nickname ingresado por el usuario
@@ -47,18 +49,22 @@ const Login = () => {
       console.error("Error al buscar el usuario:", error); // Muestra el error en consola
       setError("Error de conexión."); // Muestra mensaje de error al usuario
     }
+
   };
 
   return (
+  
     <div className="login-container">
       <h1>Iniciar sesion</h1>
       <form className="login" onSubmit={handleSubmit}>
+          <FaUser />
         <input
           type="text"
           placeholder="Nombre" // Texto guía
           value={nombre} // Valor controlado por estado
           onChange={(e) => setNombre(e.target.value)} // Actualiza estado al escribir
         />
+          <FaLock />
         <input
           type="password"
           placeholder="Contraseña" // Texto guía

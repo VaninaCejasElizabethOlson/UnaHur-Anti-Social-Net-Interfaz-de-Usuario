@@ -3,12 +3,13 @@
   cursor: pointer;
   text-decoration: underline;
   font-weight: bold;
-  transition: color 0.3s ease;
+transition: color 0.3s ease;
 }
 
 .register:hover {
   color: #0056b3; /* azul más oscuro al pasar el mouse */
   text-decoration: none;
+
 }
 
 .alert {
