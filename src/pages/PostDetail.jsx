@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState, useContext} from "react";
 import { UserContext } from "../context/UserContext"; 
+import { Link } from "react-router-dom";
 import "../style/postDetail.css"; // Asegúrate de tener este archivo creado
 
 const PostDetail = () => {
@@ -99,6 +100,7 @@ if (!post) return <p>Cargando publicación...</p>;
           ) : (
             <p style={ {marginTop:"1rem"}}>Inicia sesión para comentar.</p>
           )}
+    <Link to="/home" className="btn-volver-home">← Volver a Home</Link>     
       </div>
   ); 
 };

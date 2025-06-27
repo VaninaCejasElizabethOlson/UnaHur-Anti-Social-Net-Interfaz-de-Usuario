@@ -134,3 +134,23 @@
     font-size: 0.95rem;
   }
 }
+
+
+/* Boton de Volver a Home */
+.btn-volver-home {
+  display: inline-block;
+  margin-top: 2rem;
+  background: linear-gradient(45deg, #0077cc, #005fa3);
+  color: #fff;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: all 0.3s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.btn-volver-home:hover {
+  background: linear-gradient(45deg, #005fa3, #0077cc);
+  transform: scale(1.05)
+}

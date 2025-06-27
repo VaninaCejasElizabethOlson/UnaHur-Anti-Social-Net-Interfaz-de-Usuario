@@ -5,6 +5,8 @@ import Login from "./components/Login";
 import Home from "./components/Home";
 import Register from "./components/Register";
 import PostDetail from "./pages/PostDetail";
+import CrearPost from "./pages/CrearPost";
+
 function App() {
   const { user, setUser } = useContext(UserContext);
 
@@ -15,7 +17,7 @@ function App() {
       <Route path="/register" element={<Register />} />
       <Route path="/home" element={<Home />} />
       <Route path="/post/:id" element={<PostDetail />} />
-
+      <Route path="/crear-post" element={<CrearPost />} />
     </Routes>
   );
 }

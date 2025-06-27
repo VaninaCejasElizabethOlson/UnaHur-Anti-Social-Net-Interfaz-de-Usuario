@@ -3,7 +3,7 @@ import { UserContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import PostItem from "../components/PostItem"; // asegurate de tener este archivo creado
 import "../style/home.css";
-
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const { user, setUser } = useContext(UserContext);
@@ -61,6 +61,10 @@ const Home = () => {
           Cerrar sesión
         </button>
       </div>
+
+      <Link to="/crear-post" className="btn-nueva-publicacion">
+          ➕  Crear Nueva Publicación
+      </Link>
 
       <div className="feed">
         <h3>📰 Feed de publicaciones recientes</h3>
