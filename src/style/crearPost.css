@@ -1,0 +1,102 @@
+.crear-post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.crear-post-form textarea,
+.crear-post-form input,
+.crear-post-form select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.crear-post-form button {
+  padding: 0.6rem;
+  background-color: #0077cc;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.crear-post-form button:hover {
+  background-color: #005fa3;
+}
+
+
+.banner-success {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid #c3e6cb;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.banner-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid #f5c6cb;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.banner-success,
+.banner-error {
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Boton de Volver a Home */
+.btn-volver-home {
+  display: inline-block;
+  margin-top: 2rem;
+  background: linear-gradient(45deg, #0077cc, #005fa3);
+  color: #fff;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: all 0.3s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.btn-volver-home:hover {
+  background: linear-gradient(45deg, #005fa3, #0077cc);
+  transform: scale(1.05)
+}
+
+
+/* Titulo de la Publicación */
+.post-detail-container h2 {
+  font-size: 2rem;
+  color: #333;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.post-detail-container h2::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 4px;
+  background-color: #0077cc;
+  margin-top: 5px;
+  border-radius: 2px;
+}
+
+
+
