@@ -1,3 +1,8 @@
+body {
+background: linear-gradient(180deg,rgba(51, 173, 222, 0.85) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 0.87) 100%);
+  background-size: cover;
+}
+
 .home-container {
   max-width: 1000px;
   margin: auto;
