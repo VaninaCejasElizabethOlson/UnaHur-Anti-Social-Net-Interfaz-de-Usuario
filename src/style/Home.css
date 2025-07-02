@@ -1,5 +1,5 @@
 body {
-background: linear-gradient(180deg,rgba(51, 173, 222, 0.85) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 0.87) 100%);
+  background: linear-gradient(180deg,rgba(51, 173, 222, 0.85) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 0.87) 100%);
   background-size: cover;
 }
 
@@ -70,20 +70,18 @@ background: linear-gradient(180deg,rgba(51, 173, 222, 0.85) 0%, rgba(87, 199, 13
 }
 
 /* Crear nueva publicación */
-.btn-nueva-publicacion {
-display: inline-block;
-  margin-top: 2rem;
-  background: linear-gradient(45deg, #0077cc, #005fa3);
-  color: #fff;
-  text-decoration: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 30px;
+.btn-publicar {
+  background: linear-gradient(to right, #007bff, #00bcd4); /* Degradado azul-turquesa */
+  color: white;
   font-weight: bold;
-  transition: all 0.3s;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  padding: 10px 25px;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
 }
 
-.btn-nueva-publicacion:hover {
- background: linear-gradient(45deg, #005fa3, #0077cc);
-  transform: scale(1.05)
+.btn-publicar:hover {
+  background: linear-gradient(to right, #0056b3, #0097a7); /* más oscuro al pasar el mouse */
+  transform: scale(1.05);
 }

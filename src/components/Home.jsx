@@ -59,12 +59,12 @@ const Home = () => {
       <h1>Bienvenido</h1>
       <h2>{user?.nickName}</h2>
 
-      <button onClick={handleCrearPost} className="btn-nueva-publicacion">
-        ➕ Crear Nueva Publicación
+      <button onClick={handleCrearPost} class="btn btn-publicar">
+        <i class="bi bi-plus-circle"></i> Crear Nueva Publicación
       </button>
 
       <div className="feed">
-        <h3>📰 Feed de publicaciones recientes</h3>
+        <h3><i class="bi bi-newspaper"></i> Feed de publicaciones recientes</h3>
         {posts.length === 0 ? (
           <p>Cargando publicaciones...</p>
         ) : (
