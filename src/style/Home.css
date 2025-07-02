@@ -9,19 +9,33 @@ body {
   padding: 2rem;
   text-align: center;
   font-family: 'Segoe UI', sans-serif;
+  letter-spacing: 0.5px;
 }
 
-.home-container h1 {
-  font-size: 2.2rem;
+.home-container h1 { /*Bienvenido Estilos*/
+  font-size: 2.5rem;
   margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #111;
+  text-shadow:1px 1px 3px rgba(0, 0, 0, 0.1) ;
 }
 
-.home-container h2 {
-  font-size: 1.4rem;
+.home-container h2 { /*Nombre del Usuario Estilos*/
+  font-size: 2.5rem;
   color: #666;
-  margin-bottom: 2rem;
+  font-style: italic;
+  margin-bottom: 25px;
 }
-
+.feed h3 { /*Feed de publicaciones Estilos*/
+  font-size: 1.4rem;
+  color: #222;
+  font-weight: bold;
+  margin: 10px;
+}
+.feed i{/*Feed de publicaciones Icono Estilos*/
+  font-size: 1.4rem;
+  color: #333;
+}
 .logout-btn {
   padding: 0.6rem 1.2rem;
   background-color: #e74c3c;

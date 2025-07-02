@@ -13,38 +13,54 @@ const Layout = ({ children }) => {
 
     return (
         <div>
-        {/* Barra de navegación */}
-        <header className="navbar">
-            <div className="navbar-left">
-                {/* Logo o nombre de la app que enlaza al home */}
-                <Link to="/">UnaHur Anti-Social</Link>
-            </div>
-
-            <div className="navbar-right">
-                {/* Botón/Link "Inicio" que lleva a /home */}
-                <Link to="/" className="navbar-button">
-                    Inicio
-                </Link>
-
-                {user ? (
-                    <>
-                    <Link to="/perfil" className="navbar-button">
-                        Mi Perfil
-                    </Link>
-                        <button onClick={handleLogout} className="navbar-button">
-                            Cerrar Sesión
+            {/* Barra de navegación */}
+            <header className="navbar navbar-expand-lg navbar-dark bg-primary">
+                <div className="container-fluid">
+                        {/* Logo o nombre de la app que enlaza al home */}
+                        <Link className="navbar-brand fw-bold" to="/">UnaHur Anti-Social</Link>
+              
+                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+                        <span className="navbar-toggler-icon"></span>
                         </button>
-                    </>
-                    ) : (
-                        <Link to="/login" className="navbar-button">
-                            Login
-                        </Link>
-                    )}
-                </div>
-        </header>
 
-        {/* Aquí se renderiza el contenido de cada vista */}
-        <main>{children}</main>
+                    <div className="collapse navbar-collapse" id="navbarMenu">
+                        <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li className="nav-item">
+                                {/* Botón/Link "Inicio" que lleva a /home */}
+                                <Link to="/" className="nav-link">
+                                    Inicio
+                                </Link>
+                            </li>
+                        
+                            {user ? (
+                                <>
+                                <li className="nav-item">
+                                    <Link to="/perfil" className="nav-link">
+                                        Mi Perfil
+                                    </Link>
+                                </li>
+                                <li className="nav-item">
+                                    <button onClick={handleLogout} className="btn btn-outline-light fw-bold ms-lg-3 mt-2 mt-lg-0">
+                                        Cerrar Sesión
+                                    </button>
+                                </li>
+
+                                </>
+                                ) : (
+                                <li className="nav-item">
+                                    <Link to="/login" className="nav-link">
+                                        Login
+                                    </Link>
+                                </li>    
+
+                                )}
+                        </ul>
+                    </div>
+                </div>
+            </header>
+
+            {/* Aquí se renderiza el contenido de cada vista */}
+            <main>{children}</main>
         </div>
     );
 };
