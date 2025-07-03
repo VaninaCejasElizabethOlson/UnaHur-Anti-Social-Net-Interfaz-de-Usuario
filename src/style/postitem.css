@@ -43,7 +43,10 @@
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
 }
-
+.icono-vermas {
+  margin-right: 5px;
+  color: white !important;
+}
 .btn-ver-mas:hover {
   transform: scale(1.05);
 }
