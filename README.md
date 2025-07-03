@@ -33,6 +33,25 @@ Se estableció conexión con una API REST que permite:
 - ✅ Registrar e iniciar sesión de personas usuarias
 - 🔍 Recuperar datos desde el backend
 
+## 🚀 Cómo correr el proyecto
+
+### 1️⃣ Correr API
+
+Primero correr la API brindada por los profesores:
+https://github.com/lucasfigarola/backend-api
+
+`npm install`
+`node seed.js`
+`npm start`
+
+### 2️⃣ Correr la aplicación
+
+Una vez con la API corriendo en localhost:3001
+
+Instalar dependencias, y luego correr:
+`npm install`
+`npm run dev`
+
 ## 👥 Autores
 
 - Navarro Agustin
