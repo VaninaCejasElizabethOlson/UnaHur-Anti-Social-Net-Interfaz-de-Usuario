@@ -34,3 +34,19 @@
   border-radius: 6px;
   box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
 }
+
+/* Boton de Ver mas */
+.btn-ver-mas {
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 10px 20px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+.icono-vermas {
+  margin-right: 5px;
+  color: white !important;
+}
+.btn-ver-mas:hover {
+  transform: scale(1.05);
+}

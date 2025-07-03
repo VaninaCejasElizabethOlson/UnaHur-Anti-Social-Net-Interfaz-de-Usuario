@@ -26,7 +26,7 @@ const PostItem = ({ post }) => {
 
       <p>💬 {post.comentarios} comentarios</p>
 
-      <button onClick={() => navigate(`/post/${post.id}`)}>Ver más</button>
+      <button onClick={() => navigate(`/post/${post.id}`)}  class="btn btn-success btn-ver-mas"> <i class="bi bi-chevron-down icono-vermas"></i>   Ver más</button>
     </div>
   );
 };
