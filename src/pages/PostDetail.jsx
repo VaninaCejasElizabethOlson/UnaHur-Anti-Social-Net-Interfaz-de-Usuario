@@ -100,7 +100,7 @@ if (!post) return <p>Cargando publicación...</p>;
           ) : (
             <p style={ {marginTop:"1rem"}}>Inicia sesión para comentar.</p>
           )}
-    <Link to="/home" className="btn-volver-home">← Volver a Home</Link>     
+    <Link to="/home" className="btn-volver-home"> <i class="bi bi-arrow-left-circle-fill"></i> Volver a Home</Link>     
       </div>
   ); 
 };

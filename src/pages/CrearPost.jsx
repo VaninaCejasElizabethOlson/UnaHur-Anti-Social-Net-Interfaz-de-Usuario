@@ -5,7 +5,6 @@ import "../style/crearPost.css";
 
 const CrearPost = () => {
   const { user } = useContext(UserContext);
-
   const [description, setDescription] = useState("");
   const [tags, setTags] = useState([]);
   const [selectedTags, setSelectedTags] = useState([]);
@@ -13,16 +12,16 @@ const CrearPost = () => {
   const [mensaje, setMensaje] = useState("");
   const [error, setError] = useState("");
 
-  // Traer etiquetas al cargar
-  useEffect(() => {
+  
+  useEffect(() => { // Traer etiquetas al cargar
     fetch("http://localhost:3001/tags")
       .then((res) => res.json())
       .then((data) => setTags(data))
       .catch((error) => console.error("Error al cargar tags", error));
   }, []);
 
-  // Limpiar mensajes después de 3 segundos
-  useEffect(() => {
+  
+  useEffect(() => { // Limpiar mensajes después de 3 segundos
     if (mensaje || error) {
       const timer = setTimeout(() => {
         setMensaje("");
@@ -203,7 +202,7 @@ const CrearPost = () => {
       </form>
 
 
-      <Link to="/home" className="btn-volver-home">← Volver a Home</Link>
+      <Link to="/home" className="btn-volver-home"><i class="bi bi-arrow-left-circle-fill"></i>  Volver a Home</Link>
     </div>
 
     

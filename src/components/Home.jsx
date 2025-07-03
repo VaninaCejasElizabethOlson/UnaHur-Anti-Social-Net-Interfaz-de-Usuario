@@ -16,6 +16,15 @@ const Home = () => {
     navigate("/");
   };
 
+  const handleCrearPost = () => {
+  if (!user) {
+    alert("Debes iniciar sesión para crear una publicación");
+    navigate("/login");
+    return;
+  }
+  navigate("/crear-post");
+};
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -50,24 +59,12 @@ const Home = () => {
       <h1>Bienvenido</h1>
       <h2>{user?.nickName}</h2>
 
-      <div className="feature-box">
-        <h3>📌 Tu progreso</h3>
-        <p>Publicaciones recientes, comentarios, y más se mostrarán acá.</p>
-      </div>
-
-      <div className="quick-links">
-      
-        <button onClick={handleLogout} className="logout-btn">
-          Cerrar sesión
-        </button>
-      </div>
-
-      <Link to="/crear-post" className="btn-nueva-publicacion">
-          ➕  Crear Nueva Publicación
-      </Link>
+      <button onClick={handleCrearPost} class="btn btn-publicar">
+        <i class="bi bi-plus-circle"></i> Crear Nueva Publicación
+      </button>
 
       <div className="feed">
-        <h3>📰 Feed de publicaciones recientes</h3>
+        <h3><i class="bi bi-newspaper"></i> Feed de publicaciones recientes</h3>
         {posts.length === 0 ? (
           <p>Cargando publicaciones...</p>
         ) : (
