@@ -1,15 +1,26 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect  } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 import "../style/Layout.css";
 
 const Layout = ({ children }) => {
     const { user, setUser } = useContext(UserContext); // Obtenemos usuario y función para logout desde el contexto
-
+    const [darkMode, setDarkMode] = useState(false);
     // Función para cerrar sesión: limpia usuario global y localStorage
     const handleLogout = () => {
         setUser(null);
     };
+
+    const modoOscuro = ()=>{
+        setDarkMode(!darkMode);
+    }
+      useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add("bg-dark", "text-white");
+    } else {
+      document.body.classList.remove("bg-dark", "text-white");
+    }
+    }, [darkMode]);
 
     return (
         <div>
@@ -30,6 +41,15 @@ const Layout = ({ children }) => {
                                 <Link to="/" className="nav-link">
                                     Inicio
                                 </Link>
+                            </li>
+                            <li className="nav-item">
+                                <button
+                                onClick={modoOscuro}
+                                className="theme-toggle-btn btn rounded-5"
+                                title="Cambiar tema"
+                                >
+                                <i className={`bi ${darkMode ? "bi-moon-fill" : "bi-sun-fill"}`}></i>
+                                </button>
                             </li>
                         
                             {user ? (

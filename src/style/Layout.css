@@ -1,9 +1,14 @@
+header {/* Transiciones generales para toda la pagina */
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
-    background-color: #4266db;
+    padding: 10px 20px;
+    background-color: #4066ea !important; /* tu azul */
     color: white;
 }
 
@@ -38,11 +43,6 @@
 
 
 /*Botones Nuevos estilos*/
-/* Cambiar color de fondo (sobrescribe el .bg-primary) */
-.navbar {
-  background-color: #4066ea !important; /* tu azul */
-  padding: 10px 20px;
-}
 
 /* Logo */
 .navbar-brand {
@@ -88,4 +88,37 @@
 .btn-outline-light:hover {
   background-color: white;
   color: #4066ea !important;
+}
+
+
+/*Cambiar Modo Oscuro*/
+.theme-toggle-btn {
+  border: none;
+  background: transparent !important;
+  color: white;
+  font-size: 1.25rem;
+  transition: transform 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+  transform: rotate(20deg) scale(1.1);
+  color: #ffeb3b; /* Ej: amarillo sol */
+}
+
+
+body.bg-dark {
+  background-color: #121212;
+}
+
+body.bg-dark .navbar {
+  background-color: #1f1f1f !important;
+}
+
+body.bg-dark .nav-link {
+  color: #eee !important;
+}
+
+body.bg-dark .nav-link:hover {
+  background-color: #eee;
+  color: #1f1f1f !important;
 }
